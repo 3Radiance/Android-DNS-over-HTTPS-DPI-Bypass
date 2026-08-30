@@ -1,6 +1,6 @@
 # Android DNS-over-HTTPS + DPI Bypass
 
-**[Read in English →](./README_EN.md)**
+**[Read in English →](./README.md)**
 
 Скрипты для автоматического запуска DNS-over-HTTPS и обхода DPI на Android через Magisk/KernelSU.
 
