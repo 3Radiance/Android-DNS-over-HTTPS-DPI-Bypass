@@ -51,7 +51,7 @@ apply_iptables() {
 start_doh() {
     if ! pgrep -f "$DOH_BIN" >/dev/null; then
         pkill -9 -f "doh-stub-rust" 2>/dev/null
-        su $NOBODY_UID:3003,3004,3005 -s /system/bin/sh -c "export LD_LIBRARY_PATH=/data/local/tmp && cd /data/local/tmp && nohup $DOH_BIN -p $LISTEN_PORT -d https://dns.google/dns-query > $LOG_FILE 2>&1 &"
+        su $NOBODY_UID -g 3003 -s /system/bin/sh -c "export LD_LIBRARY_PATH=/data/local/tmp && cd /data/local/tmp && nohup $DOH_BIN -p $LISTEN_PORT -d https://dns.google/dns-query > $LOG_FILE 2>&1 &"
     fi
 }
 
